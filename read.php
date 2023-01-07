@@ -21,7 +21,7 @@ $sql = "SELECT Id
                ,vermogen
                ,leeftijd
                ,bedrijf
-         FROM richestpeople";
+         FROM richestpeople ORDER BY vermogen DESC";
 
 $statement =  $pdo->prepare($sql);
 
@@ -45,12 +45,7 @@ foreach ($result as $info) {
                     <img src='img/b_drop.png' alt='kruis'>
                    </a>
                    </td>
-                   <td>
-                    <a href='update.php?id=$info->Id'>
-                    <img src='img/b_edit.png' alt='potlood'>
-                    </a>
-                   </td>
-                   </tr>";
+                 ";
 }
 
 
@@ -85,9 +80,9 @@ foreach ($result as $info) {
         <thead>
             <th>id</th>
             <th>naam</th>
-            <th></th>
-            <th>Achternaam</th>
-            <th></th>
+            <th>vermogen</th>
+            <th>leeftijd</th>
+            <th>bedrijf</th>
             <th></th>
         </thead>
         <tbody>
