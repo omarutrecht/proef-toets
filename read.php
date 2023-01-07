@@ -16,11 +16,12 @@ try {
 }
 
 
-$sql = "SELECT id
-               ,voornaam
-               ,tussenvoegsel
-               ,achternaam
-         FROM Persoon";
+$sql = "SELECT Id
+               ,naam
+               ,vermogen
+               ,leeftijd
+               ,bedrijf
+         FROM richestpeople";
 
 $statement =  $pdo->prepare($sql);
 
@@ -33,17 +34,19 @@ $result = $statement->fetchAll(PDO::FETCH_OBJ);
 $row = "";
 foreach ($result as $info) {
     $row .= "<tr>
-            <td>$info->id</td>
-            <td>$info->voornaam</td>
-            <td>$info->tussenvoegsel</td>
-            <td>$info->achternaam</td>
+            <td>$info->Id</td>
+            <td>$info->naam</td>
+            <td>$info->vermogen</td>
+            <td>$info->leeftijd</td>
+            <td>$info->bedrijf</td>
+
             <td>
-                <a href= 'delete.php?id=$info->id'>
+                <a href= 'delete.php?id=$info->Id'>
                     <img src='img/b_drop.png' alt='kruis'>
                    </a>
                    </td>
                    <td>
-                    <a href='update.php?id=$info->id'>
+                    <a href='update.php?id=$info->Id'>
                     <img src='img/b_edit.png' alt='potlood'>
                     </a>
                    </td>
@@ -81,8 +84,8 @@ foreach ($result as $info) {
     <table border="1">
         <thead>
             <th>id</th>
-            <th>Voornaam</th>
-            <th>tussenvoegsel</th>
+            <th>naam</th>
+            <th></th>
             <th>Achternaam</th>
             <th></th>
             <th></th>
