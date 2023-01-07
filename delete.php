@@ -18,11 +18,11 @@ try{
 }
 
 $sql = "DELETE FROM richestpeople
-        WHERE Id= :Id ";
+        WHERE Id = :id ";
 
 $statement = $pdo->prepare($sql);
 
-$statement->bindValue('Id',$_GET['Id'], PDO::PARAM_INT);
+$statement->bindValue('id',$_GET['id'], PDO::PARAM_INT);
 
 
 $result = $statement->execute();
@@ -30,10 +30,10 @@ $result = $statement->execute();
 
 if ($result){
     echo "het record is verwijderd";
-    header ('Refresh:1; url=read.php');
+    header ('Refresh:2; url=read.php');
 } else {
     echo "het record is niet verwijderd";
-    header('Refresh:1; url=read.php');
+    header('Refresh:2; url=read.php');
 }
 
 
