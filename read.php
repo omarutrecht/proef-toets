@@ -83,7 +83,7 @@ foreach ($result as $info) {
             <th>vermogen</th>
             <th>leeftijd</th>
             <th>bedrijf</th>
-            <th></th>
+            <th>delete  </th>
         </thead>
         <tbody>
             <?= $row ?>
